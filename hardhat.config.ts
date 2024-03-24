@@ -1,9 +1,10 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomiclabs/hardhat-waffle"; // If using Waffle for testing
-import "@nomiclabs/hardhat-ethers"; // This line extends 'ethers' with Hardhat-specific functionality
+require("@nomiclabs/hardhat-waffle");
+require("@typechain/hardhat");
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.24",
+module.exports = {
+  solidity: "0.8.20",
+  typechain: {
+    outDir: "typechain",
+    target: "ethers-v5",
+  },
 };
-
-export default config;
